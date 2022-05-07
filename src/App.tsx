@@ -17,13 +17,13 @@ const App = function () {
     return <Text style={styles.item}>{item.name}</Text>;
   }, []);
 
-  const EmptyListComponent = () => {
+  const EmptyListComponent = React.memo(() => {
     return (
       <View>
         <Text style={styles.item}>No data found</Text>
       </View>
     );
-  };
+  });
 
   // Component used as list separator
   const ItemSeparatorComponent = React.memo(() => {
