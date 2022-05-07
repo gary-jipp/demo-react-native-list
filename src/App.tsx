@@ -1,7 +1,7 @@
 import React, {useCallback, useEffect, useState} from 'react';
 import {SafeAreaView, StyleSheet, StatusBar, View, Text, } from 'react-native';
 import {FlatList, ListRenderItem} from 'react-native';
-import friendData from './mockData';
+import friends from './mockData';
 
 type Friend = {
   id: string;
@@ -9,12 +9,14 @@ type Friend = {
 };
 
 const App = function () {
-  const [friends, setFriends] = useState<Friend[]>([]);
+  console.log('Rendering App');
 
-  // This is just a mock data fetch on first render
-  useEffect(() => {
-    setFriends(friendData);
-  }, []);
+  // const [friends, setFriends] = useState<Friend[]>([]);
+
+  // // This is just a mock data fetch on first render
+  // useEffect(() => {
+  //   setFriends(friendData);
+  // }, []);
 
   // Component used as list separator
   const ItemSeparator = () => {
