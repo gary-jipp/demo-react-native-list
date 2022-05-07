@@ -2,13 +2,12 @@ import React, {useEffect, useState} from 'react';
 import {SafeAreaView, StyleSheet, StatusBar, View, Text} from 'react-native';
 import {ScrollView} from 'react-native';
 import friendData from './mockData';
+type FriendType = {
+  id: string;
+  name: string;
+};
 
 const App = function () {
-  type FriendType = {
-    id: string;
-    name: string;
-  };
-
   const [friends, setFriends] = useState<FriendType[]>([]);
 
   useEffect(() => {
