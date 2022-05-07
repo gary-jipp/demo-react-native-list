@@ -63,8 +63,8 @@ const styles = StyleSheet.create({
     backgroundColor: '#666',
   },
   itemSeparator: {
-    height: 1,
-    backgroundColor: '#777',
+    height: 2,
+    backgroundColor: '#607D8B',
   },
   item: {
     fontSize: 24,
