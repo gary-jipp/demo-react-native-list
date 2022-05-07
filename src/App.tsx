@@ -18,6 +18,7 @@ const App = function () {
     return (
       <View key={friend.id} style={styles.list}>
         <Text style={styles.text}>{friend.name}</Text>
+        <View style={styles.itemSeparator} />
       </View>
     );
   });
