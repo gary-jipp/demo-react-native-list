@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react';
 import {SafeAreaView, StyleSheet, StatusBar, View, Text} from 'react-native';
 import {FlatList} from 'react-native';
 import friendData from './mockData';
+
 type FriendType = {
   id: string;
   name: string;
