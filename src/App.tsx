@@ -18,6 +18,7 @@ const App = function () {
     return (
       <View key={friend.id} style={styles.list}>
         <Text style={styles.text}>{friend.name}</Text>
+        <View style={styles.itemSeparator} />
       </View>
     );
   });
@@ -39,9 +40,11 @@ const styles = StyleSheet.create({
   },
   list: {
     padding: 18,
-    marginTop: 2,
-
-    backgroundColor: '#999',
+    backgroundColor: '#666',
+  },
+  itemSeparator: {
+    height: 1,
+    backgroundColor: '#777',
   },
   text: {fontSize: 24, fontWeight: '600', color: '#EEE'},
 });
