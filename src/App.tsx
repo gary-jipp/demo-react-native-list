@@ -5,7 +5,7 @@ const App = () => {
   return (
     <SafeAreaView style={styles.container}>
       <StatusBar />
-      <Text>Hello React Native</Text>
+      <Text style={styles.text}>Hello React Native</Text>
     </SafeAreaView>
   );
 };
@@ -16,6 +16,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
   },
+  text: {fontSize: 24, fontWeight: '500'},
 });
 
 export default App;
