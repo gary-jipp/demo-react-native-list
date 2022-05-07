@@ -1,4 +1,4 @@
-import React, {useCallback, useEffect, useState} from 'react';
+import React, {useCallback} from 'react';
 import {SafeAreaView, StyleSheet, StatusBar, View, Text, } from 'react-native';
 import {FlatList, ListRenderItem} from 'react-native';
 import friends from './mockData';
@@ -10,14 +10,6 @@ type Friend = {
 
 const App = function () {
   console.log('Rendering App');
-
-  // const [friends, setFriends] = useState<Friend[]>([]);
-
-  // // This is just a mock data fetch on first render
-  // useEffect(() => {
-  //   setFriends(friendData);
-  // }, []);
-
   // Component used as list separator
   const ItemSeparator = () => {
     return <View style={styles.itemSeparator} />;
@@ -29,7 +21,7 @@ const App = function () {
     return <Text style={styles.item}>{item.name}</Text>;
   }, []);
 
-  const EmptyList = () => {
+  const EmptyListComponent = () => {
     return (
       <View>
         <Text style={styles.item}>No data found</Text>
@@ -52,7 +44,7 @@ const App = function () {
         data={friends}
         keyExtractor={item => item.id}
         renderItem={renderItem}
-        ListEmptyComponent={EmptyList}
+        ListEmptyComponent={EmptyListComponent}
         ItemSeparatorComponent={ItemSeparator}
         ListFooterComponent={ListFooterComponent}
         ListHeaderComponent={ListHeaderComponent}
