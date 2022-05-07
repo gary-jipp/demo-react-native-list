@@ -25,9 +25,7 @@ const App = function () {
   return (
     <SafeAreaView style={styles.container}>
       <StatusBar />
-      <ScrollView>
-        <View>{friendList}</View>
-      </ScrollView>
+      <ScrollView>{friendList}</ScrollView>
     </SafeAreaView>
   );
 };
