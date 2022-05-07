@@ -26,17 +26,17 @@ const App = function () {
   };
 
   // Component used as list separator
-  const ItemSeparatorComponent = () => {
+  const ItemSeparatorComponent = React.memo(() => {
     return <View style={styles.itemSeparator} />;
-  };
+  });
 
-  const ListHeaderComponent = () => {
+  const ListHeaderComponent = React.memo(() => {
     return <Text style={styles.header}>List of Friends</Text>;
-  };
+  });
 
-  const ListFooterComponent = () => {
+  const ListFooterComponent = React.memo(() => {
     return <Text style={styles.footer}>That's all Folks</Text>;
-  };
+  });
 
   return (
     <SafeAreaView style={styles.container}>
