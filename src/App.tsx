@@ -21,6 +21,15 @@ const App = function () {
     return <View style={styles.itemSeparator} />;
   };
 
+  const EmptyList = () => {
+    return (
+      // eslint-disable-next-line react-native/no-inline-styles
+      <View>
+        <Text style={styles.item}>No data found</Text>
+      </View>
+    );
+  };
+
   return (
     <SafeAreaView style={styles.container}>
       <StatusBar />
@@ -29,6 +38,7 @@ const App = function () {
         keyExtractor={item => item.id}
         renderItem={({item}) => <Text style={styles.item}>{item.name}</Text>}
         ItemSeparatorComponent={ItemSeparator}
+        ListEmptyComponent={EmptyList}
       />
     </SafeAreaView>
   );
@@ -47,7 +57,13 @@ const styles = StyleSheet.create({
     height: 1,
     backgroundColor: '#777',
   },
-  item: {fontSize: 24, fontWeight: '600', color: '#EEE', padding: 18, backgroundColor: '#666'},
+  item: {
+    fontSize: 24,
+    fontWeight: '600',
+    color: '#EEE',
+    padding: 18,
+    backgroundColor: '#666',
+  },
 });
 
 export default App;
