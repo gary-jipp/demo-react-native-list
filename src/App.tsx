@@ -1,5 +1,5 @@
 import React, {useCallback} from 'react';
-import {SafeAreaView, StyleSheet, StatusBar, View, Text, } from 'react-native';
+import {SafeAreaView, StyleSheet, StatusBar, View, Text} from 'react-native';
 import {FlatList, ListRenderItem} from 'react-native';
 import friends from './mockData';
 
