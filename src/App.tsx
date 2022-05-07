@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {useCallback, useEffect, useState} from 'react';
 import {SafeAreaView, StyleSheet, StatusBar, View, Text, } from 'react-native';
 import {FlatList, ListRenderItem} from 'react-native';
 import friendData from './mockData';
@@ -21,9 +21,11 @@ const App = function () {
     return <View style={styles.itemSeparator} />;
   };
 
-  const renderItem: ListRenderItem<Friend> = ({item}) => {
+  // Still doesn't stop multiple item renders
+  const renderItem: ListRenderItem<Friend> = useCallback(({item}) => {
+    console.log('Rendering Item', item.id, item.name);
     return <Text style={styles.item}>{item.name}</Text>;
-  };
+  }, []);
 
   const EmptyList = () => {
     return (
