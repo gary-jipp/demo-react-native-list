@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import {SafeAreaView, StyleSheet, StatusBar, View, Text} from 'react-native';
-import {ScrollView, FlatList} from 'react-native';
+import {FlatList} from 'react-native';
 import friendData from './mockData';
 type FriendType = {
   id: string;
@@ -13,15 +13,6 @@ const App = function () {
   useEffect(() => {
     setFriends(friendData);
   }, []);
-
-  const friendList = friends.map(item => {
-    return (
-      <View key={item.id} style={styles.list}>
-        <Text style={styles.item}>{item.name}</Text>
-        <View style={styles.itemSeparator} />
-      </View>
-    );
-  });
 
   const ItemSeparator = () => {
     return <View style={styles.itemSeparator} />;
