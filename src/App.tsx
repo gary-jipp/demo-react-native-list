@@ -14,14 +14,12 @@ const App = function () {
     setFriends(friendData);
   }, []);
 
-  const friendList = friends.map(friend => {
-    return (
-      <View key={friend.id} style={styles.list}>
-        <Text style={styles.text}>{friend.name}</Text>
-        <View style={styles.itemSeparator} />
-      </View>
-    );
-  });
+  const friendList = friends.map(friend => (
+    <View key={friend.id} style={styles.list}>
+      <Text style={styles.text}>{friend.name}</Text>
+      <View style={styles.itemSeparator} />
+    </View>
+  ));
 
   return (
     <SafeAreaView style={styles.container}>
