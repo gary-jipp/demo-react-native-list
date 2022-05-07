@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react';
 import {SafeAreaView, StyleSheet, StatusBar, View, Text} from 'react-native';
 import {ScrollView} from 'react-native';
 import friendData from './mockData';
+
 type FriendType = {
   id: string;
   name: string;
@@ -10,10 +11,12 @@ type FriendType = {
 const App = function () {
   const [friends, setFriends] = useState<FriendType[]>([]);
 
+  // This is just a mock data fetch on first render
   useEffect(() => {
     setFriends(friendData);
   }, []);
 
+  // Build our mapped list ahead of time
   const friendList = friends.map(friend => (
     <View key={friend.id} style={styles.list}>
       <Text style={styles.text}>{friend.name}</Text>
