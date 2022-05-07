@@ -23,11 +23,18 @@ const App = function () {
 
   const EmptyList = () => {
     return (
-      // eslint-disable-next-line react-native/no-inline-styles
       <View>
         <Text style={styles.item}>No data found</Text>
       </View>
     );
+  };
+
+  const ListHeaderComponent = () => {
+    return <Text style={styles.header}>List of Friends</Text>;
+  };
+
+  const ListFooterComponent = () => {
+    return <Text style={styles.footer}>That's all Folks</Text>;
   };
 
   return (
@@ -37,8 +44,10 @@ const App = function () {
         data={friends}
         keyExtractor={item => item.id}
         renderItem={({item}) => <Text style={styles.item}>{item.name}</Text>}
-        ItemSeparatorComponent={ItemSeparator}
         ListEmptyComponent={EmptyList}
+        ItemSeparatorComponent={ItemSeparator}
+        ListFooterComponent={ListFooterComponent}
+        ListHeaderComponent={ListHeaderComponent}
       />
     </SafeAreaView>
   );
@@ -63,6 +72,18 @@ const styles = StyleSheet.create({
     color: '#EEE',
     padding: 18,
     backgroundColor: '#666',
+  },
+  header: {
+    fontSize: 30,
+    textAlign: 'center',
+    marginTop: 20,
+    fontWeight: 'bold',
+  },
+  footer: {
+    fontSize: 30,
+    textAlign: 'center',
+    marginBottom: 20,
+    fontWeight: 'bold',
   },
 });
 
