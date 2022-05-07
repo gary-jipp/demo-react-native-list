@@ -10,10 +10,12 @@ type FriendType = {
 const App = function () {
   const [friends, setFriends] = useState<FriendType[]>([]);
 
+  // This is just a mock data fetch on first render
   useEffect(() => {
     setFriends(friendData);
   }, []);
 
+  // Component used as list separator
   const ItemSeparator = () => {
     return <View style={styles.itemSeparator} />;
   };
