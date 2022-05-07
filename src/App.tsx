@@ -10,10 +10,6 @@ type Friend = {
 
 const App = function () {
   console.log('Rendering App');
-  // Component used as list separator
-  const ItemSeparator = () => {
-    return <View style={styles.itemSeparator} />;
-  };
 
   // Still doesn't stop multiple item renders
   const renderItem: ListRenderItem<Friend> = useCallback(({item}) => {
@@ -27,6 +23,11 @@ const App = function () {
         <Text style={styles.item}>No data found</Text>
       </View>
     );
+  };
+
+  // Component used as list separator
+  const ItemSeparatorComponent = () => {
+    return <View style={styles.itemSeparator} />;
   };
 
   const ListHeaderComponent = () => {
@@ -45,7 +46,7 @@ const App = function () {
         keyExtractor={item => item.id}
         renderItem={renderItem}
         ListEmptyComponent={EmptyListComponent}
-        ItemSeparatorComponent={ItemSeparator}
+        ItemSeparatorComponent={ItemSeparatorComponent}
         ListFooterComponent={ListFooterComponent}
         ListHeaderComponent={ListHeaderComponent}
       />
