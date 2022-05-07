@@ -32,9 +32,9 @@ const App = function () {
       <StatusBar />
       <FlatList
         data={friends}
+        keyExtractor={item => item.id}
         renderItem={({item}) => <Text style={styles.item}>{item.name}</Text>}
         ItemSeparatorComponent={ItemSeparator}
-        keyExtractor={item => item.id}
       />
     </SafeAreaView>
   );
