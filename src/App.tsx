@@ -16,11 +16,6 @@ const App = function () {
     setFriends(friendData);
   }, []);
 
-  // Component used as list separator
-  const ItemSeparator = () => {
-    return <View style={styles.itemSeparator} />;
-  };
-
   const renderItem: ListRenderItem<Friend> = ({item}) => {
     console.log('Rendering Item', item.id, item.name);
     return <Text style={styles.item}>{item.name}</Text>;
@@ -32,6 +27,11 @@ const App = function () {
         <Text style={styles.item}>No data found</Text>
       </View>
     );
+  };
+
+  // Component used as list separator
+  const ItemSeparator = () => {
+    return <View style={styles.itemSeparator} />;
   };
 
   const ListHeaderComponent = () => {
