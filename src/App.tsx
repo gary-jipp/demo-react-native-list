@@ -22,6 +22,7 @@ const App = function () {
   };
 
   const renderItem: ListRenderItem<Friend> = ({item}) => {
+    console.log('Rendering Item', item.id, item.name);
     return <Text style={styles.item}>{item.name}</Text>;
   };
 
