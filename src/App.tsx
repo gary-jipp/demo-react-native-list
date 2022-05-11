@@ -47,11 +47,10 @@ const App = function () {
       <StatusBar />
       <FlatList
         data={friends}
-        keyExtractor={item => item.id}
+        keyExtractor={item => item.id.toString()}
         renderItem={renderItem}
         ListEmptyComponent={EmptyList}
-        windowSize={1}
-        initialNumToRender={20}
+        windowSize={3}
         ItemSeparatorComponent={ItemSeparator}
         ListFooterComponent={ListFooterComponent}
         ListHeaderComponent={ListHeaderComponent}
