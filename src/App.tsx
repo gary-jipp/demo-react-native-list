@@ -4,7 +4,7 @@ import {FlatList, ListRenderItem} from 'react-native';
 import friendData from './mockData';
 
 type Friend = {
-  id: string;
+  id: number;
   name: string;
 };
 
@@ -50,6 +50,8 @@ const App = function () {
         keyExtractor={item => item.id}
         renderItem={renderItem}
         ListEmptyComponent={EmptyList}
+        windowSize={1}
+        initialNumToRender={20}
         ItemSeparatorComponent={ItemSeparator}
         ListFooterComponent={ListFooterComponent}
         ListHeaderComponent={ListHeaderComponent}
