@@ -4,7 +4,7 @@ import {ScrollView} from 'react-native';
 import friendData from './mockData';
 
 type FriendType = {
-  id: string;
+  id: number;
   name: string;
 };
 
