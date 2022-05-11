@@ -17,12 +17,15 @@ const App = function () {
   }, []);
 
   // Build our mapped list ahead of time
-  const friendList = friends.map(friend => (
-    <View key={friend.id} style={styles.list}>
-      <Text style={styles.text}>{friend.name}</Text>
-      <View style={styles.itemSeparator} />
-    </View>
-  ));
+  const friendList = friends.map(friend => {
+    console.log('Rendering Item', friend.id, friend.name);
+    return (
+      <View key={friend.id} style={styles.list}>
+        <Text style={styles.text}>{friend.name}</Text>
+        <View style={styles.itemSeparator} />
+      </View>
+    );
+  });
 
   return (
     <SafeAreaView style={styles.container}>
